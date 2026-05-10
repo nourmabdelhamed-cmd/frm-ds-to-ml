@@ -1,0 +1,42 @@
+project:
+  run_name: voc-tiny-cpu
+
+data:
+  root: data
+  dataset_year: "2012"
+  image_set: train
+  validation_image_set: val
+  download: true
+  image_size: 128
+  max_samples: 12
+  validation_max_samples: 64
+  num_workers: 0
+  use_synthetic_data: false
+
+model:
+  model_name: unet
+  encoder_name: resnet18
+  use_pretrained_weights: false
+  num_classes: 21
+
+training:
+  batch_size: 2
+  epochs: 1
+  learning_rate: 0.001
+  max_batches: 4
+  validation_max_batches: 16
+  run_validation: true
+  log_every_n_batches: 5
+  seed: 42
+  device: cpu
+
+tracking:
+  mlflow_tracking_uri: sqlite:///mlflow.db
+  mlflow_experiment: ipcv-voc-demo
+  checkpoint_path: models/voc-tiny-unet.pt
+  log_model: false
+  model_artifact_name: model
+  registered_model_name:
+  log_prediction_images: true
+  prediction_samples: 2
+  prediction_image_key: segmentation_preview

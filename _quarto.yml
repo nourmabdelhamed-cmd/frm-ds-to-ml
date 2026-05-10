@@ -1,0 +1,35 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - nbs/*.ipynb
+
+website:
+  title: "From Computer Vision Student to Machine Learning Engineer"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: nbs/00_research_experiment.ipynb
+        text: Stage 0
+      - href: nbs/01_collaboration_config_runner.ipynb
+        text: Stage 1
+      - href: nbs/02_mlflow_tracking_registry.ipynb
+        text: Stage 2
+      - href: nbs/03_ci_quality_gate.ipynb
+        text: Stage 3
+      - href: nbs/04_advanced_mlflow_training.ipynb
+        text: Advanced MLflow
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-fold: false
+    code-tools: true
+    code-line-numbers: true
+
+execute:
+  eval: false
+  echo: true

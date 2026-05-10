@@ -1,0 +1,16 @@
+stages:
+  train:
+    cmd: uv run python train.py --config params.yaml
+    deps:
+      - train.py
+      - ipcv/_workflow_impl.py
+      - ipcv/workflow.py
+      - params.yaml
+    params:
+      - project
+      - data
+      - model
+      - training
+      - tracking
+    outs:
+      - models/voc-tiny-unet.pt

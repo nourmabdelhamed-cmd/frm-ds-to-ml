@@ -1,0 +1,67 @@
+---
+title: "From Computer Vision Student to Machine Learning Engineer"
+subtitle: "A staged teaching arc from research notebook to production ML workflow"
+format:
+  html:
+    theme: cosmo
+    toc: false
+execute:
+  eval: false
+  echo: true
+---
+
+This module follows one small semantic segmentation project as it moves from a research-style notebook to a workflow another researcher or engineer can trust, rerun, and change.
+
+The goal is not model accuracy. The goal is to make the transition from data science experimentation to production ML practice concrete.
+
+## Presentation Stages
+
+| Stage | Focus | Link |
+|---|---|---|
+| 0 | Research-style Pascal VOC training setup in a notebook | [Research Experiment](nbs/00_research_experiment.html) |
+| 1 | A collaborator joins; code becomes configurable and `train.py` becomes agnostic | [Collaboration And Configuration](nbs/01_collaboration_config_runner.html) |
+| 2 | MLflow tracking records params, metrics, checkpoints, and optional registry hooks | [MLflow Tracking And Registry](nbs/02_mlflow_tracking_registry.html) |
+| 3 | Tests and CI protect the workflow contract without running heavy training | [CI Quality Gate](nbs/03_ci_quality_gate.html) |
+| Advanced | Actual MLflow training run with artifacts, model logging, and optional registration | [Advanced MLflow Training](nbs/04_advanced_mlflow_training.html) |
+
+## Project Arc
+
+```{mermaid}
+flowchart LR
+  A[Research experiment] --> B[Collaborator changes config]
+  B --> C[Agnostic train.py]
+  C --> D[MLflow run history]
+  D --> E[Tests and CI]
+```
+
+## Demo Commands
+
+Install dependencies:
+
+```bash
+uv sync --dev
+```
+
+Run fast tests:
+
+```bash
+uv run pytest
+```
+
+Run a tiny real VOC training job:
+
+```bash
+uv run python train.py --config params.yaml
+```
+
+Run a fast synthetic smoke check:
+
+```bash
+uv run python train.py --config params.yaml --synthetic --model tiny --no-mlflow
+```
+
+Run a fast MLflow smoke check with model logging:
+
+```bash
+uv run python train.py --config params.yaml --synthetic --model tiny --max-samples 4 --max-batches 1 --log-model
+```

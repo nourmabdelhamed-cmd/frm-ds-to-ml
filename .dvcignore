@@ -1,0 +1,6 @@
+# Keep DVC scans focused for this small teaching repo.
+.venv/
+_site/
+mlruns/
+.pytest_cache/
+__pycache__/

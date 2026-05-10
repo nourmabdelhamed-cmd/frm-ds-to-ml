@@ -1,0 +1,54 @@
+# OS/editor noise
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Python environments, caches, and packaging output
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Notebook/runtime scratch files
+.ipynb_checkpoints/
+nbs/.ipynb_checkpoints/
+.jupyter_cache/
+
+# nbdev/Quarto generated site output
+_site/
+_docs/
+_proc/
+.quarto/
+**/*.quarto_ipynb
+nbs/_quarto.yml
+nbs/nbdev.yml
+nbs/sidebar.yml
+
+# Local datasets and model artifacts
+data/*
+!data/.gitkeep
+models/*
+!models/.gitkeep
+
+# Local MLflow state
+mlruns/
+mlartifacts/
+mlflow.db
+mlflow*.db
+*-smoke.db
+
+# DVC runtime state
+.dvc/cache/
+.dvc/tmp/
+
+# Local logs
+*.log
