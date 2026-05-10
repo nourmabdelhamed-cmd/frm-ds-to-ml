@@ -39,8 +39,8 @@ jobs:
       - name: Export nbdev code
         run: uv run nbdev-export
 
-      - name: Render RevealJS slides
-        run: quarto render nbs
+      - name: Render Quarto site
+        run: quarto render
 
       - uses: actions/configure-pages@v5
 

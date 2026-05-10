@@ -52,3 +52,5 @@ mlflow*.db
 
 # Local logs
 *.log
+
+/.quarto/
