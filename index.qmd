@@ -1,3 +1,4 @@
+%% echo: false
 ---
 title: "From Computer Vision Student to Machine Learning Engineer"
 subtitle: "A staged teaching arc from research notebook to production ML workflow"
@@ -27,6 +28,8 @@ The goal is not model accuracy. The goal is to make the transition from data sci
 ## Project Arc
 
 ```{mermaid}
+%%| eval: true
+%%| echo: false
 flowchart LR
   A[Research experiment] --> B[Collaborator changes config]
   B --> C[Agnostic train.py]
