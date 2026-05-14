@@ -3,7 +3,7 @@
 # %% auto #0
 __all__ = []
 
-# %% ../nbs/01_collaboration_config_runner.ipynb #ab59e837
+# %% ../nbs/01_collaboration_config_runner.ipynb #53afa7c4
 #| echo: false
 from ipcv._workflow_impl import (
     SyntheticSegmentationDataset,

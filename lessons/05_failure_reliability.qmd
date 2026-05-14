@@ -1,0 +1,26 @@
+---
+title: "05 Failure And Reliability"
+format: html
+execute:
+  eval: false
+---
+
+## Main Question
+
+Why do computer vision systems fail in production?
+
+## Runnable Example
+
+```bash
+uv run python localize.py --config configs/localization.yaml --scenario gps_drift --no-mlflow
+uv run python localize.py --config configs/localization.yaml --scenario calibration_error --no-mlflow
+uv run python localize.py --config configs/localization.yaml --scenario delayed_observations --no-mlflow
+```
+
+## Engineering Focus
+
+Failures are reproducible configuration, not informal stories. Each scenario produces metrics, plots, telemetry tables, and a Markdown report.
+
+## Exercise
+
+Create a scenario with dropped and corrupted observations. Compare correction rate and final drift against the baseline.

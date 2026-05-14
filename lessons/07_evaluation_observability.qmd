@@ -1,0 +1,25 @@
+---
+title: "07 Evaluation And Observability"
+format: html
+execute:
+  eval: false
+---
+
+## Main Question
+
+How do we continuously evaluate and improve AI systems?
+
+## Runnable Example
+
+```bash
+uv run python localize.py --config configs/localization.yaml --scenario gps_drift
+uv run mlflow ui --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./mlruns
+```
+
+## Engineering Focus
+
+MLflow logs the system memory: configuration, scenario metadata, metrics, plots, CSV artifacts, and reports. The important question is not only whether a run succeeded, but how it behaved.
+
+## Exercise
+
+Run the baseline and `gps_drift` scenarios with MLflow enabled. Compare trajectory RMSE, final drift, and error plots.

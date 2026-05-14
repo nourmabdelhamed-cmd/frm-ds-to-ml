@@ -1,7 +1,14 @@
-"""Teaching project for moving from data science notebooks to production ML."""
+"""Applied computer vision systems engineering course package."""
 
 __version__ = "0.1.0"
 
-from .workflow import TrainingConfig, build_model, load_config, run_training
+from .geometry import CameraIntrinsics, Pose2D
+from .localization import KalmanLocalizationEstimator, LocalizationConfig, SensorObservation
 
-__all__ = ["TrainingConfig", "build_model", "load_config", "run_training"]
+__all__ = [
+    "CameraIntrinsics",
+    "KalmanLocalizationEstimator",
+    "LocalizationConfig",
+    "Pose2D",
+    "SensorObservation",
+]

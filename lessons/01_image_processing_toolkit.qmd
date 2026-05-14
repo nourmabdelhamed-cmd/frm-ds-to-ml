@@ -1,0 +1,33 @@
+---
+title: "01 Image Processing Toolkit"
+format: html
+execute:
+  eval: false
+---
+
+## Main Question
+
+How does a machine extract meaningful information from images?
+
+## Runnable Example
+
+```python
+import numpy as np
+
+from ipcv.image_processing import canny_edges, detect_corners, sobel_edges
+
+image = np.zeros((64, 64), dtype=np.uint8)
+image[16:48, 16:48] = 255
+
+edges = sobel_edges(image)
+binary_edges = canny_edges(image)
+corners = detect_corners(image, max_corners=8)
+```
+
+## Engineering Focus
+
+The same reusable functions support notebooks, tests, and later pipeline code. OpenCV is used when available, with deterministic fallbacks for fast CI.
+
+## Exercise
+
+Create a noisy square image, compare Sobel and Canny outputs, and write a test that verifies the detected edge map is non-empty.

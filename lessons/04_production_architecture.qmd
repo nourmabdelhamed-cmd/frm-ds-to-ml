@@ -1,0 +1,36 @@
+---
+title: "04 Production Architecture"
+format: html
+execute:
+  eval: false
+---
+
+## Main Question
+
+How do we structure computer vision systems for long-term maintainability?
+
+## Runnable Example
+
+```bash
+uv run python localize.py --config configs/localization.yaml --no-mlflow
+```
+
+The runner delegates to package code:
+
+```text
+localize.py
+  -> load_localization_config
+  -> run_localization_workflow
+  -> estimator, failures, evaluation, observability
+```
+
+## Engineering Focus
+
+- `Strategy`: failure scenarios change observation behavior without changing estimator code
+- `Factory`: config loaders create dataclasses from YAML
+- `Observer`: MLflow and report artifacts observe runs without owning core logic
+- `Builder`: workflow assembly creates truth, observations, estimates, metrics, and artifacts
+
+## Exercise
+
+Add a new YAML scenario and run it without editing `localize.py`.

@@ -3,8 +3,10 @@ import subprocess
 import sys
 from pathlib import Path
 
-import torch
-from torch import nn
+import pytest
+
+torch = pytest.importorskip("torch")
+from torch import nn  # noqa: E402
 
 from ipcv.workflow import (
     TrainingConfig,
@@ -19,6 +21,8 @@ from ipcv.workflow import (
     mlflow_safe_params,
     run_training,
 )
+
+pytestmark = pytest.mark.segmentation
 
 
 def test_load_config_reads_nested_yaml(tmp_path):

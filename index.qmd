@@ -1,7 +1,6 @@
-%% echo: false
 ---
-title: "From Computer Vision Student to Machine Learning Engineer"
-subtitle: "A staged teaching arc from research notebook to production ML workflow"
+title: "Applied Computer Vision Systems Engineering"
+subtitle: "From image processing algorithms to reliable visual-localization systems"
 format:
   html:
     theme: cosmo
@@ -11,19 +10,29 @@ execute:
   echo: true
 ---
 
-This module follows one small semantic segmentation project as it moves from a research-style notebook to a workflow another researcher or engineer can trust, rerun, and change.
+This course bridges academic computer vision and production engineering through one concrete project: a visual-localization system that can be configured, tested, replayed, evaluated, observed, and debugged.
 
-The goal is not model accuracy. The goal is to make the transition from data science experimentation to production ML practice concrete.
+The main question is:
 
-## Presentation Stages
+```text
+How do we transform computer vision algorithms into scalable and reliable production systems?
+```
 
-| Stage | Focus | Link |
+## Semester Arc
+
+| Week | Focus | Link |
 |---|---|---|
-| 0 | Research-style Pascal VOC training setup in a notebook | [Research Experiment](nbs/00_research_experiment.html) |
-| 1 | A collaborator joins; code becomes configurable and `train.py` becomes agnostic | [Collaboration And Configuration](nbs/01_collaboration_config_runner.html) |
-| 2 | MLflow tracking records params, metrics, checkpoints, and optional registry hooks | [MLflow Tracking And Registry](nbs/02_mlflow_tracking_registry.html) |
-| 3 | Tests and CI protect the workflow contract without running heavy training | [CI Quality Gate](nbs/03_ci_quality_gate.html) |
-| Advanced | Actual MLflow training run with artifacts, model logging, and optional registration | [Advanced MLflow Training](nbs/04_advanced_mlflow_training.html) |
+| 0 | Course architecture and local setup | [Course Setup](lessons/00_course_setup.html) |
+| 1 | Image processing toolkit | [Image Processing Toolkit](lessons/01_image_processing_toolkit.html) |
+| 2 | Geometry and camera systems | [Geometry And Camera Systems](lessons/02_geometry_camera_systems.html) |
+| 3 | Localization and state estimation | [Localization State Estimation](lessons/03_localization_state_estimation.html) |
+| 4 | Production architecture | [Production Architecture](lessons/04_production_architecture.html) |
+| 5 | Failure and reliability | [Failure And Reliability](lessons/05_failure_reliability.html) |
+| 6 | Data and replay workflows | [Data Workflows](lessons/06_data_workflows.html) |
+| 7 | Evaluation and observability | [Evaluation And Observability](lessons/07_evaluation_observability.html) |
+| 8 | Automation and local skills | [Automation And Local Skills](lessons/08_automation_local_skills.html) |
+| 9-12 | Final project | [Final Project](lessons/09_final_project.html) |
+| Appendix | Optional PyTorch segmentation workflow | [Segmentation Appendix](lessons/90_optional_segmentation_mlflow.html) |
 
 ## Project Arc
 
@@ -31,13 +40,15 @@ The goal is not model accuracy. The goal is to make the transition from data sci
 %%| eval: true
 %%| echo: false
 flowchart LR
-  A[Research experiment] --> B[Collaborator changes config]
-  B --> C[Agnostic train.py]
-  C --> D[MLflow run history]
-  D --> E[Tests and CI]
+  A[Image processing] --> B[Geometry]
+  B --> C[Localization estimator]
+  C --> D[Failure replay]
+  D --> E[Evaluation metrics]
+  E --> F[MLflow observability]
+  F --> G[Local engineering skills]
 ```
 
-## Demo Commands
+## Core Commands
 
 Install dependencies:
 
@@ -45,26 +56,20 @@ Install dependencies:
 uv sync --dev
 ```
 
-Run fast tests:
+Run tests:
 
 ```bash
 uv run pytest
 ```
 
-Run a tiny real VOC training job:
+Run a baseline replay:
 
 ```bash
-uv run python train.py --config params.yaml
+uv run python localize.py --config configs/localization.yaml --no-mlflow
 ```
 
-Run a fast synthetic smoke check:
+Run a failure scenario with MLflow logging:
 
 ```bash
-uv run python train.py --config params.yaml --synthetic --model tiny --no-mlflow
-```
-
-Run a fast MLflow smoke check with model logging:
-
-```bash
-uv run python train.py --config params.yaml --synthetic --model tiny --max-samples 4 --max-batches 1 --log-model
+uv run python localize.py --config configs/localization.yaml --scenario gps_drift
 ```

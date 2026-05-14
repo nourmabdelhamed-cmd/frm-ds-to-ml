@@ -1,0 +1,9 @@
+name: corrupted_observations
+description: Some observations are corrupted and marked invalid for correction.
+drift_per_step: [0.0, 0.0]
+observation_delay_steps: 0
+drop_rate: 0.05
+corruption_rate: 0.15
+corruption_scale: 2.0
+calibration_scale: 1.0
+seed: 404

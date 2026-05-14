@@ -3,24 +3,79 @@ project:
   output-dir: _site
   render:
     - index.qmd
+    - lessons/*.qmd
     - nbs/*.ipynb
 
 website:
-  title: "From Computer Vision Student to Machine Learning Engineer"
+  title: "Applied Computer Vision Systems Engineering"
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - href: nbs/00_research_experiment.ipynb
-        text: Stage 0
-      - href: nbs/01_collaboration_config_runner.ipynb
-        text: Stage 1
-      - href: nbs/02_mlflow_tracking_registry.ipynb
-        text: Stage 2
-      - href: nbs/03_ci_quality_gate.ipynb
-        text: Stage 3
-      - href: nbs/04_advanced_mlflow_training.ipynb
-        text: Advanced MLflow
+      - href: lessons/00_course_setup.qmd
+        text: Setup
+      - href: lessons/01_image_processing_toolkit.qmd
+        text: Images
+      - href: lessons/02_geometry_camera_systems.qmd
+        text: Geometry
+      - href: lessons/03_localization_state_estimation.qmd
+        text: Localization
+      - href: lessons/04_production_architecture.qmd
+        text: Architecture
+      - href: lessons/05_failure_reliability.qmd
+        text: Reliability
+      - href: lessons/06_data_workflows.qmd
+        text: Data
+      - href: lessons/07_evaluation_observability.qmd
+        text: Observability
+      - href: lessons/08_automation_local_skills.qmd
+        text: Automation
+      - href: lessons/09_final_project.qmd
+        text: Final Project
+      - href: lessons/90_optional_segmentation_mlflow.qmd
+        text: Appendix
+  sidebar:
+    style: docked
+    search: true
+    contents:
+      - href: index.qmd
+        text: Course Overview
+      - section: "Core Course"
+        contents:
+          - href: lessons/00_course_setup.qmd
+            text: "00 Course Setup"
+          - href: lessons/01_image_processing_toolkit.qmd
+            text: "01 Image Processing Toolkit"
+          - href: lessons/02_geometry_camera_systems.qmd
+            text: "02 Geometry And Camera Systems"
+          - href: lessons/03_localization_state_estimation.qmd
+            text: "03 Localization State Estimation"
+          - href: lessons/04_production_architecture.qmd
+            text: "04 Production Architecture"
+          - href: lessons/05_failure_reliability.qmd
+            text: "05 Failure And Reliability"
+          - href: lessons/06_data_workflows.qmd
+            text: "06 Data Workflows"
+          - href: lessons/07_evaluation_observability.qmd
+            text: "07 Evaluation And Observability"
+          - href: lessons/08_automation_local_skills.qmd
+            text: "08 Automation And Local Skills"
+          - href: lessons/09_final_project.qmd
+            text: "09 Final Project"
+      - section: "Optional Segmentation Appendix"
+        contents:
+          - href: lessons/90_optional_segmentation_mlflow.qmd
+            text: "Appendix Overview"
+          - href: nbs/00_research_experiment.ipynb
+            text: "Research Experiment"
+          - href: nbs/01_collaboration_config_runner.ipynb
+            text: "Collaboration And Config"
+          - href: nbs/02_mlflow_tracking_registry.ipynb
+            text: "MLflow Tracking"
+          - href: nbs/03_ci_quality_gate.ipynb
+            text: "CI Quality Gate"
+          - href: nbs/04_advanced_mlflow_training.ipynb
+            text: "Advanced MLflow Training"
 
 format:
   html:

@@ -1,0 +1,36 @@
+---
+title: "03 Localization State Estimation"
+format: html
+execute:
+  eval: false
+---
+
+## Main Question
+
+How can systems estimate their state using noisy observations?
+
+## Runnable Example
+
+```python
+from ipcv.evaluation import evaluate_trajectory
+from ipcv.localization import (
+    KalmanLocalizationEstimator,
+    LocalizationConfig,
+    generate_ground_truth,
+    simulate_observations,
+)
+
+config = LocalizationConfig(steps=25)
+truth = generate_ground_truth(config)
+observations = simulate_observations(truth, config)
+estimates = KalmanLocalizationEstimator(config).run(observations)
+result = evaluate_trajectory(truth, estimates)
+```
+
+## Engineering Focus
+
+The estimator is isolated from data loading, failure injection, visualization, and MLflow. That separation makes the math easier to test and the system easier to change.
+
+## Exercise
+
+Change observation noise and compare `trajectory_rmse`, `final_drift`, and `mean_innovation_norm`.

@@ -1,0 +1,9 @@
+name: calibration_error
+description: A scale error simulates a miscalibrated visual position estimate.
+drift_per_step: [0.0, 0.0]
+observation_delay_steps: 0
+drop_rate: 0.0
+corruption_rate: 0.0
+corruption_scale: 1.0
+calibration_scale: 1.08
+seed: 202

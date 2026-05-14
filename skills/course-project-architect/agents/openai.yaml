@@ -1,0 +1,3 @@
+display_name: Course Project Architect
+short_description: Create teaching repos that turn prototypes into team-ready software.
+default_prompt: Create or refactor a hands-on course repository that teaches software engineering practices through a concrete case study.

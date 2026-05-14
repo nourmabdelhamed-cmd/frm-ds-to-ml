@@ -1,0 +1,34 @@
+---
+title: "02 Geometry And Camera Systems"
+format: html
+execute:
+  eval: false
+---
+
+## Main Question
+
+How does a machine understand spatial relationships?
+
+## Runnable Example
+
+```python
+import numpy as np
+
+from ipcv.geometry import CameraIntrinsics, Pose2D, backproject_pixels, project_points
+
+intrinsics = CameraIntrinsics(fx=300, fy=300, cx=160, cy=120)
+points = np.array([[1.0, 0.5, 5.0], [0.0, 1.0, 4.0]])
+pixels = project_points(points, intrinsics)
+recovered = backproject_pixels(pixels, points[:, 2], intrinsics)
+
+robot_pose = Pose2D(x=1.0, y=2.0, theta=0.2)
+world_points = robot_pose.transform_points(np.array([[0.0, 0.0], [1.0, 0.0]]))
+```
+
+## Engineering Focus
+
+Geometry code is small, typed, deterministic, and directly testable. This makes calibration and localization failures easier to isolate later.
+
+## Exercise
+
+Add a reprojection-error check for a synthetic camera measurement and decide which error threshold would fail a calibration review.

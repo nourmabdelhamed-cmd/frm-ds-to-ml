@@ -25,7 +25,7 @@ jobs:
         run: uv run nbdev-export
 
       - name: Verify package imports
-        run: uv run python -c "import ipcv; from ipcv.workflow import TrainingConfig; print(TrainingConfig())"
+        run: uv run python -c "import ipcv; from ipcv.localization import LocalizationConfig; print(LocalizationConfig())"
 
       - name: Run tests
         run: uv run pytest

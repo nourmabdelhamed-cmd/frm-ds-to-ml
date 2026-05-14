@@ -1,0 +1,24 @@
+---
+title: "06 Data Workflows"
+format: html
+execute:
+  eval: false
+---
+
+## Main Question
+
+How do we scale data workflows for vision systems?
+
+## Runnable Example
+
+```bash
+uv run dvc repro localize
+```
+
+## Engineering Focus
+
+Git tracks code, configs, tests, and docs. Runtime outputs live under `outputs/` and can be reproduced locally. DVC provides a boundary for replay artifacts and later larger datasets.
+
+## Exercise
+
+Inspect `dvc.yaml`, then add one scenario-specific replay target for a failure case you want to compare repeatedly.

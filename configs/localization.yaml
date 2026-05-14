@@ -1,0 +1,21 @@
+project:
+  run_name: localization-baseline
+  output_dir: outputs/localization
+
+simulation:
+  steps: 50
+  dt: 0.2
+  seed: 42
+  initial_state: [0.0, 0.0, 1.0, 0.25]
+  process_noise: 0.02
+  observation_noise: 0.08
+
+estimator:
+  process_noise: 0.03
+  measurement_noise: 0.08
+  initial_covariance: 0.5
+
+tracking:
+  mlflow_tracking_uri: sqlite:///mlflow.db
+  mlflow_experiment: ipcv-localization
+  log_artifacts: true

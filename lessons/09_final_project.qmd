@@ -1,0 +1,28 @@
+---
+title: "09 Final Project"
+format: html
+execute:
+  eval: false
+---
+
+## Goal
+
+Build a complete computer vision system that includes image processing, geometry, localization, production architecture, evaluation, observability, and AI-assisted reporting.
+
+## Required Capabilities
+
+- configurable replay workflow
+- at least three failure scenarios
+- deterministic tests for geometry and estimation
+- evaluation metrics with thresholds
+- visual artifacts for trajectory and error analysis
+- MLflow run logging
+- local engineering report or skill output
+
+## Review Checklist
+
+- Can another student install and run it?
+- Are generated artifacts excluded from Git?
+- Are failures reproducible?
+- Do tests protect the workflow contract?
+- Does the report explain evidence, not only conclusions?

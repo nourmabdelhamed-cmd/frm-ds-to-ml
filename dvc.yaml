@@ -1,6 +1,18 @@
 stages:
-  train:
-    cmd: uv run python train.py --config params.yaml
+  localize:
+    cmd: uv run python localize.py --config configs/localization.yaml --no-mlflow
+    deps:
+      - localize.py
+      - ipcv/evaluation.py
+      - ipcv/failures.py
+      - ipcv/localization.py
+      - ipcv/localization_workflow.py
+      - ipcv/observability.py
+      - configs/localization.yaml
+    outs:
+      - outputs/localization/baseline
+  segmentation_train:
+    cmd: uv run --group segmentation python train.py --config params.yaml
     deps:
       - train.py
       - ipcv/_workflow_impl.py

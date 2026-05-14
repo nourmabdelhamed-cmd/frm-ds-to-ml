@@ -1,0 +1,27 @@
+---
+title: "90 Optional Segmentation MLflow Appendix"
+format: html
+execute:
+  eval: false
+---
+
+## Purpose
+
+The original PyTorch/Pascal VOC workflow remains as an optional appendix for teaching learned perception, segmentation preview artifacts, and model logging.
+
+## Setup
+
+```bash
+uv sync --dev --group segmentation
+```
+
+## Commands
+
+```bash
+uv run --group segmentation python train.py --config params.yaml --synthetic --model tiny --no-mlflow
+uv run --group segmentation python train.py --config params.yaml --synthetic --model tiny --max-samples 4 --max-batches 1 --log-model
+```
+
+## Boundary
+
+PyTorch is not required for the main visual-localization course. It is introduced only when the teaching goal moves from classical/geometric CV systems into deep-learning model workflows.

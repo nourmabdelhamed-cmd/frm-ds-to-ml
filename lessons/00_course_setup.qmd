@@ -1,0 +1,30 @@
+---
+title: "00 Course Setup"
+format: html
+execute:
+  eval: false
+---
+
+## Scenario
+
+A research prototype is becoming a shared course project. The first engineering task is to make the workflow installable, runnable, testable, and easy to inspect.
+
+## Commands
+
+```bash
+uv sync --dev
+uv run pytest
+uv run python localize.py --config configs/localization.yaml --no-mlflow
+```
+
+## Engineering Focus
+
+- source code lives in `ipcv/`
+- configuration lives in `configs/`
+- runtime artifacts go to `outputs/`
+- generated artifacts are ignored by Git
+- CI verifies imports, nbdev export, and fast tests
+
+## Exercise
+
+Run the baseline replay, inspect `outputs/localization/baseline/report.md`, then delete the generated output and rerun it.

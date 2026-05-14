@@ -38,6 +38,10 @@ data/*
 !data/.gitkeep
 models/*
 !models/.gitkeep
+outputs/*
+!outputs/.gitkeep
+reports/*
+!reports/.gitkeep
 
 # Local MLflow state
 mlruns/

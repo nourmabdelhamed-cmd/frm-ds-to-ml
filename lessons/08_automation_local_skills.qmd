@@ -1,0 +1,25 @@
+---
+title: "08 Automation And Local Skills"
+format: html
+execute:
+  eval: false
+---
+
+## Main Question
+
+How can AI agents assist engineering workflows?
+
+## Local Skills
+
+- `skills/localization-debugger`
+- `skills/calibration-checker`
+- `skills/regression-analyzer`
+- `skills/evaluation-report-generator`
+
+## Engineering Focus
+
+The skills operate on local artifacts: configs, metrics JSON, CSV telemetry, plots, and Markdown reports. They are useful without paid APIs and can later be connected to an LLM workflow.
+
+## Exercise
+
+Run a failure scenario, then use the skill instructions to summarize what changed and which evidence supports the diagnosis.

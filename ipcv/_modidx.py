@@ -5,4 +5,12 @@ d = { 'settings': { 'branch': 'main',
                 'doc_host': 'https://abdelhamednour.github.io',
                 'git_url': 'https://github.com/abdelhamednour/ipcv',
                 'lib_path': 'ipcv'},
-  'syms': {'ipcv.workflow': {}}}
+  'syms': { 'ipcv.evaluation': {},
+            'ipcv.failures': {},
+            'ipcv.geometry': {},
+            'ipcv.image_processing': {},
+            'ipcv.localization': {},
+            'ipcv.localization_workflow': {},
+            'ipcv.observability': {},
+            'ipcv.service': {},
+            'ipcv.workflow': {}}}
