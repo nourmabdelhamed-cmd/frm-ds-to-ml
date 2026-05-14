@@ -2,7 +2,7 @@ name: Deploy Slides
 
 on:
   push:
-    branches: [main]
+    branches: [main, full-localization-workflow]
   workflow_dispatch:
 
 permissions:
