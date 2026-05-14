@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
       - uses: actions/setup-python@v5
         with:
@@ -26,6 +28,9 @@ jobs:
 
       - name: Verify package imports
         run: uv run python -c "import ipcv; from ipcv.localization import LocalizationConfig; print(LocalizationConfig())"
+
+      - name: Verify Kalman submodule
+        run: test -f external/kalman-bayesian-filters/12-Particle-Filters.ipynb
 
       - name: Run tests
         run: uv run pytest

@@ -22,6 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
       - uses: actions/setup-python@v5
         with:
@@ -38,6 +40,9 @@ jobs:
 
       - name: Export nbdev code
         run: uv run nbdev-export
+
+      - name: Verify Kalman submodule
+        run: test -f external/kalman-bayesian-filters/12-Particle-Filters.ipynb
 
       - name: Render Quarto site
         run: quarto render
