@@ -42,6 +42,7 @@ outputs/*
 !outputs/.gitkeep
 reports/*
 !reports/.gitkeep
+generated/
 
 # Local MLflow state
 mlruns/

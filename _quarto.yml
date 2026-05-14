@@ -1,32 +1,13 @@
 project:
   type: website
   output-dir: _site
+  pre-render:
+    - uv run python scripts/prepare_kalman_quarto.py
   render:
     - index.qmd
     - lessons/*.qmd
     - nbs/*.ipynb
-    - external/kalman-bayesian-filters/00-Preface.ipynb
-    - external/kalman-bayesian-filters/01-g-h-filter.ipynb
-    - external/kalman-bayesian-filters/02-Discrete-Bayes.ipynb
-    - external/kalman-bayesian-filters/03-Gaussians.ipynb
-    - external/kalman-bayesian-filters/04-One-Dimensional-Kalman-Filters.ipynb
-    - external/kalman-bayesian-filters/05-Multivariate-Gaussians.ipynb
-    - external/kalman-bayesian-filters/06-Multivariate-Kalman-Filters.ipynb
-    - external/kalman-bayesian-filters/07-Kalman-Filter-Math.ipynb
-    - external/kalman-bayesian-filters/08-Designing-Kalman-Filters.ipynb
-    - external/kalman-bayesian-filters/09-Nonlinear-Filtering.ipynb
-    - external/kalman-bayesian-filters/10-Unscented-Kalman-Filter.ipynb
-    - external/kalman-bayesian-filters/11-Extended-Kalman-Filters.ipynb
-    - external/kalman-bayesian-filters/12-Particle-Filters.ipynb
-    - external/kalman-bayesian-filters/13-Smoothing.ipynb
-    - external/kalman-bayesian-filters/14-Adaptive-Filtering.ipynb
-    - external/kalman-bayesian-filters/Appendix-A-Installation.ipynb
-    - external/kalman-bayesian-filters/Appendix-B-Symbols-and-Notations.ipynb
-    - external/kalman-bayesian-filters/Appendix-D-HInfinity-Filters.ipynb
-    - external/kalman-bayesian-filters/Appendix-E-Ensemble-Kalman-Filters.ipynb
-    - external/kalman-bayesian-filters/Appendix-G-Designing-Nonlinear-Kalman-Filters.ipynb
-    - external/kalman-bayesian-filters/Appendix-H-Least-Squares-Filters.ipynb
-    - external/kalman-bayesian-filters/Appendix-I-Analytic-Evaluation-of-Performance.ipynb
+    - generated/kalman-bayesian-filters/*.ipynb
 
 website:
   title: "Applied Computer Vision Systems Engineering"
@@ -92,51 +73,53 @@ website:
         contents:
           - href: lessons/03a_probability_statistics_state_estimation.qmd
             text: "Submodule Overview"
-          - href: external/kalman-bayesian-filters/00-Preface.ipynb
+          - href: generated/kalman-bayesian-filters/table_of_contents.ipynb
+            text: "Kalman Book Table Of Contents"
+          - href: generated/kalman-bayesian-filters/00-Preface.ipynb
             text: "00 Preface"
-          - href: external/kalman-bayesian-filters/01-g-h-filter.ipynb
+          - href: generated/kalman-bayesian-filters/01-g-h-filter.ipynb
             text: "01 g-h Filter"
-          - href: external/kalman-bayesian-filters/02-Discrete-Bayes.ipynb
+          - href: generated/kalman-bayesian-filters/02-Discrete-Bayes.ipynb
             text: "02 Discrete Bayes"
-          - href: external/kalman-bayesian-filters/03-Gaussians.ipynb
+          - href: generated/kalman-bayesian-filters/03-Gaussians.ipynb
             text: "03 Gaussians"
-          - href: external/kalman-bayesian-filters/04-One-Dimensional-Kalman-Filters.ipynb
+          - href: generated/kalman-bayesian-filters/04-One-Dimensional-Kalman-Filters.ipynb
             text: "04 One-Dimensional Kalman Filters"
-          - href: external/kalman-bayesian-filters/05-Multivariate-Gaussians.ipynb
+          - href: generated/kalman-bayesian-filters/05-Multivariate-Gaussians.ipynb
             text: "05 Multivariate Gaussians"
-          - href: external/kalman-bayesian-filters/06-Multivariate-Kalman-Filters.ipynb
+          - href: generated/kalman-bayesian-filters/06-Multivariate-Kalman-Filters.ipynb
             text: "06 Multivariate Kalman Filters"
-          - href: external/kalman-bayesian-filters/07-Kalman-Filter-Math.ipynb
+          - href: generated/kalman-bayesian-filters/07-Kalman-Filter-Math.ipynb
             text: "07 Kalman Filter Math"
-          - href: external/kalman-bayesian-filters/08-Designing-Kalman-Filters.ipynb
+          - href: generated/kalman-bayesian-filters/08-Designing-Kalman-Filters.ipynb
             text: "08 Designing Kalman Filters"
-          - href: external/kalman-bayesian-filters/09-Nonlinear-Filtering.ipynb
+          - href: generated/kalman-bayesian-filters/09-Nonlinear-Filtering.ipynb
             text: "09 Nonlinear Filtering"
-          - href: external/kalman-bayesian-filters/10-Unscented-Kalman-Filter.ipynb
+          - href: generated/kalman-bayesian-filters/10-Unscented-Kalman-Filter.ipynb
             text: "10 Unscented Kalman Filter"
-          - href: external/kalman-bayesian-filters/11-Extended-Kalman-Filters.ipynb
+          - href: generated/kalman-bayesian-filters/11-Extended-Kalman-Filters.ipynb
             text: "11 Extended Kalman Filters"
-          - href: external/kalman-bayesian-filters/12-Particle-Filters.ipynb
+          - href: generated/kalman-bayesian-filters/12-Particle-Filters.ipynb
             text: "12 Particle Filters"
-          - href: external/kalman-bayesian-filters/13-Smoothing.ipynb
+          - href: generated/kalman-bayesian-filters/13-Smoothing.ipynb
             text: "13 Smoothing"
-          - href: external/kalman-bayesian-filters/14-Adaptive-Filtering.ipynb
+          - href: generated/kalman-bayesian-filters/14-Adaptive-Filtering.ipynb
             text: "14 Adaptive Filtering"
       - section: "Kalman Book Appendices"
         contents:
-          - href: external/kalman-bayesian-filters/Appendix-A-Installation.ipynb
+          - href: generated/kalman-bayesian-filters/Appendix-A-Installation.ipynb
             text: "Appendix A Installation"
-          - href: external/kalman-bayesian-filters/Appendix-B-Symbols-and-Notations.ipynb
+          - href: generated/kalman-bayesian-filters/Appendix-B-Symbols-and-Notations.ipynb
             text: "Appendix B Symbols And Notations"
-          - href: external/kalman-bayesian-filters/Appendix-D-HInfinity-Filters.ipynb
+          - href: generated/kalman-bayesian-filters/Appendix-D-HInfinity-Filters.ipynb
             text: "Appendix D H-Infinity Filters"
-          - href: external/kalman-bayesian-filters/Appendix-E-Ensemble-Kalman-Filters.ipynb
+          - href: generated/kalman-bayesian-filters/Appendix-E-Ensemble-Kalman-Filters.ipynb
             text: "Appendix E Ensemble Kalman Filters"
-          - href: external/kalman-bayesian-filters/Appendix-G-Designing-Nonlinear-Kalman-Filters.ipynb
+          - href: generated/kalman-bayesian-filters/Appendix-G-Designing-Nonlinear-Kalman-Filters.ipynb
             text: "Appendix G Nonlinear Kalman Design"
-          - href: external/kalman-bayesian-filters/Appendix-H-Least-Squares-Filters.ipynb
+          - href: generated/kalman-bayesian-filters/Appendix-H-Least-Squares-Filters.ipynb
             text: "Appendix H Least Squares Filters"
-          - href: external/kalman-bayesian-filters/Appendix-I-Analytic-Evaluation-of-Performance.ipynb
+          - href: generated/kalman-bayesian-filters/Appendix-I-Analytic-Evaluation-of-Performance.ipynb
             text: "Appendix I Analytic Performance"
       - section: "Optional Segmentation Appendix"
         contents:

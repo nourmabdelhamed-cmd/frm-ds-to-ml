@@ -19,13 +19,13 @@ external/kalman-bayesian-filters/
 
 | Course Need | Kalman Notebook |
 |---|---|
-| Probability updates and belief state | [02 Discrete Bayes](../external/kalman-bayesian-filters/02-Discrete-Bayes.ipynb) |
-| Gaussian uncertainty and measurement noise | [03 Gaussians](../external/kalman-bayesian-filters/03-Gaussians.ipynb) |
-| First Kalman filter intuition | [04 One-Dimensional Kalman Filters](../external/kalman-bayesian-filters/04-One-Dimensional-Kalman-Filters.ipynb) |
-| Multivariate state vectors | [06 Multivariate Kalman Filters](../external/kalman-bayesian-filters/06-Multivariate-Kalman-Filters.ipynb) |
-| Deriving the Kalman equations | [07 Kalman Filter Math](../external/kalman-bayesian-filters/07-Kalman-Filter-Math.ipynb) |
-| Engineering filter matrices | [08 Designing Kalman Filters](../external/kalman-bayesian-filters/08-Designing-Kalman-Filters.ipynb) |
-| Nonlinear localization intuition | [11 Extended Kalman Filters](../external/kalman-bayesian-filters/11-Extended-Kalman-Filters.ipynb) |
+| Probability updates and belief state | [02 Discrete Bayes](../generated/kalman-bayesian-filters/02-Discrete-Bayes.ipynb) |
+| Gaussian uncertainty and measurement noise | [03 Gaussians](../generated/kalman-bayesian-filters/03-Gaussians.ipynb) |
+| First Kalman filter intuition | [04 One-Dimensional Kalman Filters](../generated/kalman-bayesian-filters/04-One-Dimensional-Kalman-Filters.ipynb) |
+| Multivariate state vectors | [06 Multivariate Kalman Filters](../generated/kalman-bayesian-filters/06-Multivariate-Kalman-Filters.ipynb) |
+| Deriving the Kalman equations | [07 Kalman Filter Math](../generated/kalman-bayesian-filters/07-Kalman-Filter-Math.ipynb) |
+| Engineering filter matrices | [08 Designing Kalman Filters](../generated/kalman-bayesian-filters/08-Designing-Kalman-Filters.ipynb) |
+| Nonlinear localization intuition | [11 Extended Kalman Filters](../generated/kalman-bayesian-filters/11-Extended-Kalman-Filters.ipynb) |
 
 ## Setup
 
