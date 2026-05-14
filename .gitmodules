@@ -1,3 +1,6 @@
 [submodule "external/kalman-bayesian-filters"]
 	path = external/kalman-bayesian-filters
 	url = https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python.git
+[submodule "external/mlops-hands-on-tutorial"]
+	path = external/mlops-hands-on-tutorial
+	url = https://github.com/mzeynali/mlops-hands-on-tutorial.git
