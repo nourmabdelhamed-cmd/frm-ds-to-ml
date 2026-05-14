@@ -32,6 +32,7 @@ models/                      # local checkpoints, ignored by Git except .gitkeep
 outputs/                     # generated replay artifacts, ignored by Git
 reports/                     # generated reports, ignored by Git
 skills/                      # local AI-assisted engineering skills/templates
+external/                    # external learning references as Git submodules
 .github/workflows/           # CI and optional site deployment
 localize.py                  # config-driven visual-localization runner
 train.py                     # optional PyTorch segmentation runner
@@ -56,6 +57,15 @@ Optional FastAPI handoff:
 ```bash
 uv sync --dev --group service
 ```
+
+Optional probability/statistics/state-estimation notebooks:
+
+```bash
+git submodule update --init --recursive
+uv sync --dev --group state-estimation
+```
+
+The state-estimation submodule is Roger R. Labbe's _Kalman and Bayesian Filters in Python_ under `external/kalman-bayesian-filters/`. IPCV renders a curated subset in the course site and links those notebooks from `lessons/03a_probability_statistics_state_estimation.qmd`.
 
 ## Run The Core Localization Workflow
 

@@ -1,0 +1,58 @@
+---
+title: "03a Probability, Statistics, And State Estimation"
+format: html
+execute:
+  eval: false
+---
+
+## Purpose
+
+This submodule connects the visual-localization course to the probability and filtering foundations behind the estimator.
+
+The material is provided through Roger R. Labbe's _Kalman and Bayesian Filters in Python_ as a Git submodule under:
+
+```text
+external/kalman-bayesian-filters/
+```
+
+## Recommended Reading Path
+
+| Course Need | Kalman Notebook |
+|---|---|
+| Probability updates and belief state | [02 Discrete Bayes](../external/kalman-bayesian-filters/02-Discrete-Bayes.ipynb) |
+| Gaussian uncertainty and measurement noise | [03 Gaussians](../external/kalman-bayesian-filters/03-Gaussians.ipynb) |
+| First Kalman filter intuition | [04 One-Dimensional Kalman Filters](../external/kalman-bayesian-filters/04-One-Dimensional-Kalman-Filters.ipynb) |
+| Multivariate state vectors | [06 Multivariate Kalman Filters](../external/kalman-bayesian-filters/06-Multivariate-Kalman-Filters.ipynb) |
+| Deriving the Kalman equations | [07 Kalman Filter Math](../external/kalman-bayesian-filters/07-Kalman-Filter-Math.ipynb) |
+| Engineering filter matrices | [08 Designing Kalman Filters](../external/kalman-bayesian-filters/08-Designing-Kalman-Filters.ipynb) |
+| Nonlinear localization intuition | [11 Extended Kalman Filters](../external/kalman-bayesian-filters/11-Extended-Kalman-Filters.ipynb) |
+
+## Setup
+
+Clone the course with submodules:
+
+```bash
+git clone --recurse-submodules <repo-url>
+```
+
+If the repo is already cloned:
+
+```bash
+git submodule update --init --recursive
+```
+
+Install optional dependencies for running the Kalman notebooks interactively:
+
+```bash
+uv sync --dev --group state-estimation
+```
+
+## How It Fits IPCV
+
+The IPCV localization module implements a small constant-velocity Kalman estimator for the production-system lessons. The external notebooks explain the probability, Gaussian, and Kalman-filter theory that justifies the estimator.
+
+Use the external notebooks for conceptual depth. Use `ipcv.localization`, `localize.py`, configs, tests, and MLflow artifacts for the production engineering workflow.
+
+## Exercise
+
+Read `04-One-Dimensional-Kalman-Filters`, then return to `ipcv.localization.KalmanLocalizationEstimator` and identify which code lines correspond to prediction, innovation, Kalman gain, and correction.

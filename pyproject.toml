@@ -35,6 +35,11 @@ service = [
     "httpx>=0.27",
     "uvicorn[standard]>=0.30",
 ]
+state-estimation = [
+    "filterpy>=1.4.5",
+    "ipywidgets>=8.1",
+    "sympy>=1.12",
+]
 
 [build-system]
 requires = ["hatchling"]

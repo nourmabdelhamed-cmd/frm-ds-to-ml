@@ -31,6 +31,10 @@ result = evaluate_trajectory(truth, estimates)
 
 The estimator is isolated from data loading, failure injection, visualization, and MLflow. That separation makes the math easier to test and the system easier to change.
 
+## Theory Submodule
+
+Use [Probability, Statistics, And State Estimation](03a_probability_statistics_state_estimation.qmd) for the deeper Kalman and Bayesian filtering background. That section links selected notebooks from the external Kalman book submodule and connects them back to this course's localization estimator.
+
 ## Exercise
 
 Change observation noise and compare `trajectory_rmse`, `final_drift`, and `mean_innovation_norm`.

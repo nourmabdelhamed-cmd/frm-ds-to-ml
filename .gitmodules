@@ -1,0 +1,3 @@
+[submodule "external/kalman-bayesian-filters"]
+	path = external/kalman-bayesian-filters
+	url = https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python.git
