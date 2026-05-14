@@ -3,11 +3,13 @@ project:
   output-dir: _site
   pre-render:
     - uv run python scripts/prepare_kalman_quarto.py
+    - uv run python scripts/prepare_mlops_quarto.py
   render:
     - index.qmd
     - lessons/*.qmd
     - nbs/*.ipynb
     - generated/kalman-bayesian-filters/*.ipynb
+    - generated/mlops-hands-on-tutorial/*.qmd
 
 website:
   title: "Applied Computer Vision Systems Engineering"
@@ -35,6 +37,8 @@ website:
         text: Observability
       - href: lessons/08_automation_local_skills.qmd
         text: Automation
+      - href: lessons/91_mlops_companion.qmd
+        text: MLOps
       - href: lessons/09_final_project.qmd
         text: Final Project
       - href: lessons/90_optional_segmentation_mlflow.qmd
@@ -69,6 +73,30 @@ website:
             text: "08 Automation And Local Skills"
           - href: lessons/09_final_project.qmd
             text: "09 Final Project"
+      - section: "MLOps Companion"
+        contents:
+          - href: lessons/91_mlops_companion.qmd
+            text: "Companion Overview"
+          - href: generated/mlops-hands-on-tutorial/overview.qmd
+            text: "MLOps Tutorial Overview"
+          - href: generated/mlops-hands-on-tutorial/week-0-project-setup.qmd
+            text: "Week 0 Project Setup"
+          - href: generated/mlops-hands-on-tutorial/week-2-hydra-configuration.qmd
+            text: "Week 2 Hydra Configuration"
+          - href: generated/mlops-hands-on-tutorial/week-3-dvc.qmd
+            text: "Week 3 DVC"
+          - href: generated/mlops-hands-on-tutorial/week-4-onnx.qmd
+            text: "Week 4 ONNX"
+          - href: generated/mlops-hands-on-tutorial/week-5-docker.qmd
+            text: "Week 5 Docker"
+          - href: generated/mlops-hands-on-tutorial/week-6-github-actions.qmd
+            text: "Week 6 GitHub Actions"
+          - href: generated/mlops-hands-on-tutorial/week-7-ecr.qmd
+            text: "Week 7 AWS ECR"
+          - href: generated/mlops-hands-on-tutorial/week-8-serverless-lambda.qmd
+            text: "Week 8 Serverless Lambda"
+          - href: generated/mlops-hands-on-tutorial/week-9-monitoring.qmd
+            text: "Week 9 Monitoring"
       - section: "Probability And State Estimation"
         contents:
           - href: lessons/03a_probability_statistics_state_estimation.qmd

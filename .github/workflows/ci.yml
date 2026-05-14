@@ -32,5 +32,8 @@ jobs:
       - name: Verify Kalman submodule
         run: test -f external/kalman-bayesian-filters/12-Particle-Filters.ipynb
 
+      - name: Verify MLOps submodule
+        run: test -f external/mlops-hands-on-tutorial/README.md
+
       - name: Run tests
         run: uv run pytest

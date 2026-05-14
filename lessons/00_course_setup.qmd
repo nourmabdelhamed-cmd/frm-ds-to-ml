@@ -17,6 +17,12 @@ uv run pytest
 uv run python localize.py --config configs/localization.yaml --no-mlflow
 ```
 
+Optional external references:
+
+```bash
+git submodule update --init --recursive
+```
+
 ## Engineering Focus
 
 - source code lives in `ipcv/`
@@ -24,6 +30,7 @@ uv run python localize.py --config configs/localization.yaml --no-mlflow
 - runtime artifacts go to `outputs/`
 - generated artifacts are ignored by Git
 - CI verifies imports, nbdev export, and fast tests
+- external companion materials live in `external/` and selected pages are rendered in the Quarto site
 
 ## Exercise
 

@@ -1,0 +1,35 @@
+---
+title: "MLOps Companion"
+format: html
+execute:
+  eval: false
+---
+
+## Role In This Course
+
+The MLOps companion submodule provides optional worked examples for production ML engineering topics that sit around the core IPCV localization project.
+
+Use these pages when a lesson needs a concrete external example of configuration, data versioning, model packaging, CI/CD, deployment, or monitoring.
+
+## Rendered Source
+
+The rendered pages are prepared from `external/mlops-hands-on-tutorial/`, which is included as a Git submodule.
+
+```bash
+git submodule update --init external/mlops-hands-on-tutorial
+```
+
+Quarto writes render-safe copies to `generated/mlops-hands-on-tutorial/` during the site pre-render step.
+
+## Suggested Mapping
+
+- Week 0 project setup supports `00 Course Setup`
+- Week 2 Hydra configuration supports `04 Production Architecture`
+- Week 3 DVC supports `06 Data Workflows`
+- Week 4 ONNX and Week 5 Docker support handoff and packaging discussions
+- Week 6 GitHub Actions supports CI and automation discussions
+- Week 9 monitoring supports `07 Evaluation And Observability`
+
+## Boundary
+
+The companion material is rendered in the course site, but it remains third-party reference material. The default IPCV workflow still uses `uv`, local configs, deterministic tests, DVC boundaries, and MLflow logging as the primary course path.

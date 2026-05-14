@@ -67,6 +67,14 @@ uv sync --dev --group state-estimation
 
 The state-estimation submodule is Roger R. Labbe's _Kalman and Bayesian Filters in Python_ under `external/kalman-bayesian-filters/`. IPCV renders a curated subset in the course site and links those notebooks from `lessons/03a_probability_statistics_state_estimation.qmd`.
 
+Optional MLOps companion material:
+
+```bash
+git submodule update --init external/mlops-hands-on-tutorial
+```
+
+The MLOps submodule is `mzeynali/mlops-hands-on-tutorial` under `external/mlops-hands-on-tutorial/`. IPCV prepares render-safe copies under `generated/mlops-hands-on-tutorial/` and renders its overview and weekly README pages in the Quarto site as companion material for configuration, DVC, Docker, CI/CD, packaging, deployment, and monitoring topics.
+
 ## Run The Core Localization Workflow
 
 Baseline replay without MLflow:
