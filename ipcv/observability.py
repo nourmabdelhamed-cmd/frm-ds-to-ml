@@ -114,7 +114,9 @@ def log_localization_artifacts(
     """Log localization metrics, params, and artifacts to MLflow."""
 
     safe_params = {
-        key: json.dumps(_json_ready(value)) if isinstance(value, (dict, list, tuple)) else value
+        key: json.dumps(_json_ready(value))
+        if isinstance(value, (dict, list, tuple))
+        else value
         for key, value in params.items()
     }
     mlflow_module.log_params(safe_params)
